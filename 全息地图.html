@@ -5,13 +5,7 @@
   <title>2025 轻工全球贸易全息投影</title>
   <style>
     /* --- 1. 基础环境 --- */
-    body { margin: 0; padding: 0; overflow: hidden; 
-      background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2e 50%, #0a0a1a 100%); 
-      font-family: "Microsoft YaHei", sans-serif; 
-      /* 添加科技感网格背景 */
-      background-image: radial-gradient(circle at 2px 2px, rgba(255, 50, 50, 0.1) 1px, transparent 0);
-      background-size: 30px 30px;
-    }
+    body { margin: 0; padding: 0; overflow: hidden; background-color: #000; font-family: "Microsoft YaHei", sans-serif; }
     #globeViz { width: 100vw; height: 100vh; }
     
     /* --- 2. 顶部 UI --- */
@@ -29,17 +23,13 @@
     /* --- 3. 图例 --- */
     .legend {
       position: absolute; bottom: 30px; left: 30px; 
-      background: rgba(10, 10, 30, 0.9); padding: 20px; 
-      border-left: 4px solid #00aaff; border-radius: 0 8px 8px 0; color: #fff; pointer-events: none;
+      background: rgba(20, 0, 0, 0.85); padding: 20px; 
+      border-left: 4px solid #ff3333; border-radius: 0 8px 8px 0; color: #fff; pointer-events: none;
       z-index: 10; /* 确保图例显示在地图之上 */
-      /* 添加科技感边框效果 */
-      box-shadow: 0 0 20px rgba(0, 170, 255, 0.2);
     }
     .color-bar {
       width: 240px; height: 8px; margin: 12px 0; border-radius: 4px;
-      background: linear-gradient(90deg, #0a1a2a, #00aaff, #00ff99, #ffd700);
-      /* 添加科技感发光效果 */
-      box-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+      background: linear-gradient(90deg, #0a1a2a, #00aaff, #ffcc00, #ff0000);
     }
     .legend-labels { display: flex; justify-content: space-between; color: #aa8888; font-size: 11px; }
 
@@ -172,9 +162,9 @@
     window.onload = function() {
       const globeEl = document.getElementById('globeViz');
       const world = Globe()(globeEl)
-        .backgroundColor('transparent') // 使用透明背景显示body渐变
+        .backgroundColor('#000')
         .showAtmosphere(true)
-        .atmosphereColor('#00aaff') // 科技感蓝色大气层
+        .atmosphereColor('#ff4444')
         .atmosphereAltitude(0.2)
         .globeImageUrl(null)
         .pointOfView({ lat: 25, lng: 110, altitude: 1.8 });
